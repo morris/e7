@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>e7 estimation</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="e7-root">
+      <header class="e7-header">
+        <h1>
+          e7 estimation
+          <small>&mdash; <a href="#about">What's this?</a></small>
+        </h1>
+      </header>
+
+      <form method="get" class="e7-form">
+        <h2>
+          <label class="e7-editable">
+            <input type="text" name="t" placeholder="Enter title..." />
+            <small class="label"
+              >&mdash; Pro Tip: Add your name to the title.</small
+            >
+            <span class="mirror"></span>
+          </label>
+        </h2>
+
+        <h3>Is the task about a <strong>user-facing</strong> feature?</h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="u" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="u" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="u" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>
+          Does the task involve more than one <strong>repository</strong>?
+        </h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="r" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="r" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="r" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>Does the task involve more than one <strong>team</strong>?</h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="s" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="s" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="s" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>
+          Does the task require provisioning or changing
+          <strong>infrastructure</strong>?
+        </h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="i" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="i" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="i" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>Does the task require <strong>data migration</strong>?</h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="d" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="d" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="d" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>
+          Is the task <strong>missing</strong> a clear implementation
+          <strong>idea</strong>?
+        </h3>
+
+        <p>
+          <label class="e7-radio-button">
+            <input type="radio" name="c" value="y" /> Yes
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="c" value="n" /> No
+          </label>
+          <label class="e7-radio-button">
+            <input type="radio" name="c" value="x" /> Don't know
+          </label>
+        </p>
+
+        <h3>
+          Estimation: <strong><span class="points"></span> points</strong>
+        </h3>
+
+        <p>
+          <button class="copylink" type="button">
+            <strong>Copy Permalink</strong>
+          </button>
+          <button class="copylink" type="reset">
+            <strong>Start over</strong>
+          </button>
+        </p>
+      </form>
+
+      <hr />
+
+      <aside id="about">
+        <h2>About</h2>
+
+        <p>
+          <strong>e7</strong> is a simple, asynchronous estimation framework.
+        </p>
+
+        <p>
+          e7 asks a series of simple questions, adding 1 estimation point for
+          each YES or DON’T KNOW. These questions should not be discussed in any
+          detail and should be answered in less than a minute. Otherwise, it’s
+          an automatic +1.
+        </p>
+
+        <p>
+          This gives a range from <strong>0&ndash;6 points</strong>. As an
+          heuristic, e7 should be good enough for most software teams to make
+          further decisions, e.g. in planning and refinement.
+        </p>
+
+        <h3>Usage</h3>
+
+        <p>
+          While you could evaluate e7 manually for each task, you may also use
+          this website to somewhat automate the process:
+        </p>
+
+        <ol>
+          <li>
+            Bookmark
+            <a href="https://morris.github.io/e7"
+              >https://morris.github.io/e7</a
+            >
+            or add it to your task template.
+          </li>
+          <li>Follow the link in tasks that need estimation.</li>
+          <li>
+            Fill the form. <small>Pro Tip: Add your name to the title.</small>
+          </li>
+          <li>Copy the permalink/estimation back to the task.</li>
+        </ol>
+
+        <h3>Background</h3>
+
+        <p>
+          Reasoning about time and complexity in software engineering is
+          <strong>difficult</strong>. Software engineering is about automating
+          things that usually haven’t been automated before, therefore it’s an
+          inherently creative process with lots of unknowns and unknown
+          unknowns. Most estimation frameworks rely on research, meetings and
+          discussions, taking
+          <strong>significant time</strong>
+          from involved parties.
+        </p>
+
+        <p>
+          In contrast, e7 focuses on a few
+          <strong>immediately decidable</strong> characteristics of tasks in
+          order to calculate estimations quickly&mdash;without research or
+          meetings.
+        </p>
+
+        <h3>Status</h3>
+
+        <p>
+          e7 is currently <strong>experimental</strong>. You're welcome to try
+          it out with your team.
+        </p>
+
+        <p>
+          Any feedback via <a href="https://github.com/morris/e7">GitHub</a> is
+          highly appreciated.
+        </p>
+      </aside>
+
+      <hr />
+
+      <footer>
+        <p>
+          <small>
+            Made by
+            <a href="https://morrisbrodersen.de">Morris Brodersen</a> | Fork on
+            <a href="https://github.com/morris/e7">GitHub</a>
+          </small>
+        </p>
+      </footer>
+    </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
